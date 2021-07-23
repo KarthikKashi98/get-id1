@@ -18,7 +18,7 @@ def home():
         print("before=>", i)
         i += 1
         o.close()
-        time.sleep(5)
+
         file = open("get_id.txt", "w")
         file.write(str(i))
         print("after=>", i)
