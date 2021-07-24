@@ -28,9 +28,9 @@ def home():
 # A route to return all of the available entries in our catalog.
 @app.route('/reset', methods=['GET'])
 def reset_all():
-    lock = FileLock("get_id.txt")
+    lock = threading.Lock()
     with lock:
-        i = 1
+        i = 0
     file = open("get_id.txt", "w")
     file.write(str(i))
     print("after=>", i)
